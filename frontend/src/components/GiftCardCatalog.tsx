@@ -56,7 +56,7 @@ export default function GiftCardCatalog({ giftCards, residentBalance, onRedeem }
           role="tabpanel"
           aria-label={`Gift cards — ${activeCategory}`}
         >
-          <ul role="list" className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <ul role="list" className="grid grid-cols-2 gap-4 lg:grid-cols-3">
             {filtered.map((card) => (
               <li key={card.id}>
                 <GiftCardItem

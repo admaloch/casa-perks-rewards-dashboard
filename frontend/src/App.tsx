@@ -160,7 +160,7 @@ export default function App() {
         pointsBalance={resident!.pointsBalance}
         onLogout={handleLogout}
       />
-      <main className="max-w-4xl mx-auto px-6 py-8 space-y-6">
+      <main className="max-w-6xl mx-auto px-6 py-8 space-y-6">
         <PointsBalance
           balance={resident!.pointsBalance}
           memberSince={resident!.memberSince}

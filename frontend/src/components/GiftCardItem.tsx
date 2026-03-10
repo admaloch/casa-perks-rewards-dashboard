@@ -52,8 +52,8 @@ export default function GiftCardItem({ card, residentBalance, onRedeem }: GiftCa
       </span>
 
       {/* Bottom row */}
-      <div className="flex items-center justify-between mt-auto">
-        <span className="text-sm font-bold text-indigo-600">
+      <div className="flex flex-col gap-2 mt-auto">
+        <span className="text-sm font-bold text-indigo-600 w-fit">
           {card.pointsCost.toLocaleString()} pts
         </span>
 
@@ -68,7 +68,7 @@ export default function GiftCardItem({ card, residentBalance, onRedeem }: GiftCa
         ) : canAfford ? (
           <button
             aria-label={`Redeem ${card.brand} ${card.value} for ${card.pointsCost.toLocaleString()} points`}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-full px-4 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             onClick={(e) => {
               e.stopPropagation()
               onRedeem(card)
