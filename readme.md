@@ -16,6 +16,7 @@ A points-based rewards dashboard for property management residents. Residents ca
 - Node.js + Express + TypeScript
 - jsonwebtoken (mock JWT auth)
 - express-rate-limit (rate limiting)
+- helmet (security headers)
 - dotenv (environment config)
 
 ---
@@ -77,3 +78,8 @@ The Vite dev server proxies all `/api/*` requests to `localhost:3001`, stripping
 - Single-file token storage (module-level variable) — production would use httpOnly cookies or secure token storage
 - No test suite — time was allocated to feature completeness and code clarity instead
 - Logo images sourced from img.logo.dev — requires network access, brand initial shown as fallback if unavailable
+
+---
+
+## AI Workflow
+See [docs/ai-workflow-claude.md](docs/ai-workflow-claude.md) and [docs/ai-workflow-cursor.md](docs/ai-workflow-cursor.md) for full documentation of AI tool usage during this project.

@@ -35,3 +35,4 @@ Library suggestions were evaluated individually. `react-hot-toast` was accepted 
 - Mutable in-memory state over static mock data — redemptions persist within a session, balance updates survive page interactions
 - Accessibility treated as a dedicated prompt and pass, not an afterthought
 - Separate documentation files for Claude and Cursor — reflects the actual distinct roles each tool played
+- Three-phase audit ran before submission — runtime test, security audit, and senior engineer code review — catching two bugs in RedeemModal including a React 18 automatic batching issue where the success state was double-deducting points from an already updated balance
