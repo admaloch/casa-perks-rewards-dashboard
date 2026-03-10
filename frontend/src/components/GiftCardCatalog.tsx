@@ -20,7 +20,7 @@ export default function GiftCardCatalog({ giftCards, residentBalance, onRedeem }
 
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm" role="region" aria-label="Gift card catalog">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-lg font-semibold text-gray-900">Gift Card Catalog</h2>
         <nav role="tablist" aria-label="Filter gift cards by category" className="flex gap-2 flex-wrap">
           {CATEGORIES.map((cat) => (
