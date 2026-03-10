@@ -22,9 +22,9 @@ const LoginScreen = ({ onLogin }: LoginScreenProps) => {
   const [residentId, setResidentId] = useState('resident-001')
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div className="min-h-screen bg-brand-offwhite flex items-center justify-center">
       <div className="bg-white rounded-2xl p-8 shadow-sm max-w-sm w-full mx-4">
-        <p className="text-2xl font-bold text-indigo-600 text-center">CasaPerks</p>
+        <p className="text-2xl font-bold text-brand-orange text-center">CasaPerks</p>
         <p className="text-sm text-gray-400 text-center mt-1 mb-8">Resident Rewards</p>
 
         <div>
@@ -38,7 +38,7 @@ const LoginScreen = ({ onLogin }: LoginScreenProps) => {
             id="resident-select"
             value={residentId}
             onChange={(e) => setResidentId(e.target.value)}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-orange"
           >
             <option value="resident-001">Sarah Chen (Apt 4B)</option>
             <option value="resident-002">Marcus Rivera (Apt 12A)</option>
@@ -48,7 +48,7 @@ const LoginScreen = ({ onLogin }: LoginScreenProps) => {
         <button
           onClick={() => onLogin(residentId)}
           aria-label="Sign in as selected resident"
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-3 font-semibold mt-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          className="w-full bg-brand-orange hover:bg-brand-orange-dark text-white rounded-xl py-3 font-semibold mt-4 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2"
         >
           Sign In
         </button>
@@ -129,7 +129,7 @@ export default function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 p-6">
+      <div className="min-h-screen bg-brand-offwhite p-6">
         <SkeletonLoader />
       </div>
     )
@@ -137,12 +137,12 @@ export default function App() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-brand-offwhite flex items-center justify-center">
         <div className="text-center">
           <p className="text-red-500 font-medium">{error}</p>
           <button
             onClick={handleLogout}
-            className="mt-4 text-sm text-indigo-600 hover:underline"
+            className="mt-4 text-sm text-brand-orange hover:underline"
           >
             Back to login
           </button>
@@ -152,7 +152,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-offwhite">
       <Toaster position="top-right" />
       <Header
         residentName={resident!.name}

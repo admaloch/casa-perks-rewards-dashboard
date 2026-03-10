@@ -42,12 +42,12 @@ export default function TransactionHistory({ transactions }: TransactionHistoryP
                 {/* Icon */}
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
-                    txn.type === 'earn' ? 'bg-green-100' : 'bg-red-100'
+                    txn.type === 'earn' ? 'bg-brand-light-green' : 'bg-red-100'
                   }`}
                 >
                   <span
                     className={`font-bold ${
-                      txn.type === 'earn' ? 'text-green-600' : 'text-red-500'
+                      txn.type === 'earn' ? 'text-brand-green' : 'text-red-500'
                     }`}
                     aria-hidden="true"
                   >
@@ -70,7 +70,7 @@ export default function TransactionHistory({ transactions }: TransactionHistoryP
                 <div className="text-right shrink-0">
                   <p
                     className={`text-sm font-semibold ${
-                      txn.type === 'earn' ? 'text-green-600' : 'text-red-500'
+                      txn.type === 'earn' ? 'text-brand-green' : 'text-red-500'
                     }`}
                   >
                     {txn.type === 'earn' ? '+' : '-'}

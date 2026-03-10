@@ -10,6 +10,13 @@ interface GiftCardCatalogProps {
 
 const CATEGORIES = ['All', 'Shopping', 'Food & Drink', 'Travel']
 
+const categoryBg: Record<string, string> = {
+  'All':          'bg-gray-100 hover:bg-gray-200',
+  'Shopping':     'bg-brand-light-purple hover:bg-brand-pink',
+  'Food & Drink': 'bg-brand-light-green hover:bg-brand-light-green',
+  'Travel':       'bg-brand-light-blue hover:bg-brand-light-blue',
+}
+
 export default function GiftCardCatalog({ giftCards, residentBalance, onRedeem }: GiftCardCatalogProps) {
   const [activeCategory, setActiveCategory] = useState('All')
 
@@ -30,10 +37,10 @@ export default function GiftCardCatalog({ giftCards, residentBalance, onRedeem }
               aria-selected={activeCategory === cat}
               aria-controls="gift-card-grid"
               onClick={() => setActiveCategory(cat)}
-              className={`text-xs font-medium rounded-full px-3 py-1.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
+              className={`text-xs font-medium rounded-full px-3 py-1.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 ${
                 activeCategory === cat
-                  ? 'bg-indigo-600 text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? 'bg-brand-orange text-white'
+                  : `${categoryBg[cat]} text-brand-darkred`
               }`}
             >
               {cat}

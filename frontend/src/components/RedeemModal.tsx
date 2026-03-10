@@ -104,7 +104,7 @@ export default function RedeemModal({
               <hr className="border-gray-100" />
               <div className="flex justify-between text-sm font-semibold">
                 <span className="text-gray-900">New balance</span>
-                <span className="text-indigo-600">
+                <span className="text-brand-orange">
                   {(residentBalance - card.pointsCost).toLocaleString()} pts
                 </span>
               </div>
@@ -115,13 +115,13 @@ export default function RedeemModal({
               <button
                 onClick={onClose}
                 aria-label="Cancel redemption"
-                className="flex-1 border border-gray-200 rounded-xl py-3 text-gray-600 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="flex-1 border border-gray-200 rounded-xl py-3 text-gray-600 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2"
               >
                 Cancel
               </button>
               <button
                 onClick={onConfirm}
-                className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-3 font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="flex-1 bg-brand-green hover:opacity-90 text-white rounded-xl py-3 font-semibold focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
               >
                 Confirm Redemption
               </button>
@@ -134,7 +134,7 @@ export default function RedeemModal({
             <div
               role="status"
               aria-label="Processing redemption"
-              className="w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full mx-auto animate-spin"
+              className="w-10 h-10 border-4 border-brand-orange border-t-transparent rounded-full mx-auto animate-spin"
             />
             <p className="text-gray-500 mt-4" aria-live="polite">
               Processing...
@@ -158,7 +158,7 @@ export default function RedeemModal({
             </p>
             <button
               onClick={onClose}
-              className="w-full bg-indigo-600 text-white rounded-xl py-3 mt-6 font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="w-full bg-brand-green hover:opacity-90 text-white rounded-xl py-3 mt-6 font-semibold focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
             >
               Done
             </button>
@@ -182,7 +182,7 @@ export default function RedeemModal({
             <button
               onClick={onClose}
               aria-label="Cancel redemption"
-              className="w-full border border-gray-200 text-gray-600 rounded-xl py-3 mt-6 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="w-full border border-gray-200 text-gray-600 rounded-xl py-3 mt-6 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2"
             >
               Close
             </button>

@@ -18,7 +18,7 @@ export default function GiftCardItem({ card, residentBalance, onRedeem }: GiftCa
       aria-disabled={!canAfford ? true : undefined}
       className={`relative rounded-2xl border p-4 flex flex-col gap-3 ${
         canAfford
-          ? 'border-gray-200 bg-white hover:shadow-md hover:border-indigo-200 transition-all cursor-pointer'
+          ? 'border-gray-200 bg-white hover:shadow-md hover:border-brand-pink transition-all cursor-pointer'
           : 'border-gray-100 bg-gray-50 opacity-60 cursor-not-allowed'
       }`}
     >
@@ -53,7 +53,7 @@ export default function GiftCardItem({ card, residentBalance, onRedeem }: GiftCa
 
       {/* Bottom row */}
       <div className="flex flex-col gap-2 mt-auto">
-        <span className="text-sm font-bold text-indigo-600 w-fit">
+        <span className="text-sm font-bold text-brand-orange w-fit">
           {card.pointsCost.toLocaleString()} pts
         </span>
 
@@ -68,7 +68,7 @@ export default function GiftCardItem({ card, residentBalance, onRedeem }: GiftCa
         ) : canAfford ? (
           <button
             aria-label={`Redeem ${card.brand} ${card.value} for ${card.pointsCost.toLocaleString()} points`}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            className="bg-brand-green hover:opacity-90 text-white text-xs font-semibold rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
             onClick={(e) => {
               e.stopPropagation()
               onRedeem(card)

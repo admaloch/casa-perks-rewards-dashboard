@@ -13,7 +13,7 @@ export default function PointsBalance({ balance, memberSince }: PointsBalancePro
 
   return (
     <div
-      className="bg-gradient-to-br from-indigo-600 to-indigo-400 rounded-2xl p-8 text-white"
+      className="bg-gradient-to-br from-brand-darkred to-brand-orange rounded-2xl p-8 text-white"
       role="region"
       aria-label="Points balance summary"
     >
