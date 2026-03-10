@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Gift } from 'lucide-react'
 import { GiftCard } from '../types/index'
 import GiftCardItem from './GiftCardItem'
 
@@ -28,7 +29,10 @@ export default function GiftCardCatalog({ giftCards, residentBalance, onRedeem }
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm" role="region" aria-label="Gift card catalog">
       <div className="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className="text-lg font-semibold text-gray-900">Gift Card Catalog</h2>
+        <div className="flex items-center gap-2">
+          <Gift size={18} strokeWidth={1.75} aria-hidden="true" className="text-brand-orange flex-shrink-0" />
+          <h2 className="text-lg font-semibold text-brand-darkred">Gift Card Catalog</h2>
+        </div>
         <nav role="tablist" aria-label="Filter gift cards by category" className="flex gap-2 flex-wrap">
           {CATEGORIES.map((cat) => (
             <button

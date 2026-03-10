@@ -1,3 +1,5 @@
+import { Sparkles } from 'lucide-react'
+
 interface PointsBalanceProps {
   balance: number
   memberSince: string
@@ -33,7 +35,12 @@ export default function PointsBalance({ balance, memberSince }: PointsBalancePro
         >
           Member since {formattedDate}
         </p>
-        <span className="text-2xl opacity-20" aria-hidden="true">★</span>
+        <Sparkles
+          size={28}
+          strokeWidth={1.5}
+          aria-hidden="true"
+          className="text-white opacity-30 flex-shrink-0"
+        />
       </div>
     </div>
   )

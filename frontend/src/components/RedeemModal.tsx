@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { CheckCircle, XCircle, Loader } from 'lucide-react'
 import { GiftCard, RedeemStatus } from '../types/index'
 
 interface RedeemModalProps {
@@ -130,13 +131,14 @@ export default function RedeemModal({
         )}
 
         {status === 'loading' && (
-          <div className="text-center py-4">
-            <div
-              role="status"
-              aria-label="Processing redemption"
-              className="w-10 h-10 border-4 border-brand-orange border-t-transparent rounded-full mx-auto animate-spin"
+          <div className="text-center py-8" role="status" aria-label="Processing redemption">
+            <Loader
+              size={40}
+              strokeWidth={2}
+              aria-hidden="true"
+              className="text-brand-orange mx-auto animate-spin flex-shrink-0"
             />
-            <p className="text-gray-500 mt-4" aria-live="polite">
+            <p aria-live="polite" className="text-gray-500 mt-4">
               Processing...
             </p>
           </div>
@@ -144,12 +146,12 @@ export default function RedeemModal({
 
         {status === 'success' && (
           <div aria-live="polite">
-            <div
+            <CheckCircle
+              size={56}
+              strokeWidth={1.5}
               aria-hidden="true"
-              className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto text-3xl text-green-600"
-            >
-              ✓
-            </div>
+              className="text-green-500 mx-auto flex-shrink-0"
+            />
             <p id="modal-title" className="text-xl font-bold text-gray-900 text-center mt-4">
               {card.brand} {card.value} redeemed!
             </p>
@@ -167,12 +169,12 @@ export default function RedeemModal({
 
         {status === 'error' && (
           <div aria-live="polite">
-            <div
+            <XCircle
+              size={56}
+              strokeWidth={1.5}
               aria-hidden="true"
-              className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto text-3xl text-red-500"
-            >
-              ✕
-            </div>
+              className="text-red-400 mx-auto flex-shrink-0"
+            />
             <p id="modal-title" className="text-xl font-bold text-gray-900 text-center mt-4">
               Redemption failed
             </p>

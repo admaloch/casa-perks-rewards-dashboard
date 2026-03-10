@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Tag } from 'lucide-react'
 import { GiftCard } from '../types/index'
 
 interface GiftCardItemProps {
@@ -47,7 +48,8 @@ export default function GiftCardItem({ card, residentBalance, onRedeem }: GiftCa
       </div>
 
       {/* Value badge */}
-      <span className="bg-gray-100 text-gray-700 text-xs font-medium rounded-full px-3 py-1 w-fit">
+      <span className="bg-gray-100 text-gray-700 text-xs font-medium rounded-full px-3 py-1 w-fit flex items-center gap-1.5">
+        <Tag size={12} strokeWidth={2} aria-hidden="true" className="flex-shrink-0" />
         {card.value} Gift Card
       </span>
 

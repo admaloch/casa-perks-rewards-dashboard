@@ -1,3 +1,4 @@
+import { TrendingUp, ArrowUp, ArrowDown } from 'lucide-react'
 import { Transaction } from '../types/index'
 
 interface TransactionHistoryProps {
@@ -13,7 +14,10 @@ export default function TransactionHistory({ transactions }: TransactionHistoryP
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm" role="region" aria-label="Transaction history">
       <div className="flex items-baseline mb-4">
-        <h2 className="text-lg font-semibold text-gray-900">Transaction History</h2>
+        <div className="flex items-center gap-2">
+          <TrendingUp size={18} strokeWidth={1.75} aria-hidden="true" className="text-brand-darkred flex-shrink-0" />
+          <h2 className="text-lg font-semibold text-brand-darkred">Transaction History</h2>
+        </div>
         <span className="text-sm text-gray-400 ml-2">{transactions.length} records</span>
       </div>
 
@@ -45,14 +49,11 @@ export default function TransactionHistory({ transactions }: TransactionHistoryP
                     txn.type === 'earn' ? 'bg-brand-light-green' : 'bg-red-100'
                   }`}
                 >
-                  <span
-                    className={`font-bold ${
-                      txn.type === 'earn' ? 'text-brand-green' : 'text-red-500'
-                    }`}
-                    aria-hidden="true"
-                  >
-                    {txn.type === 'earn' ? '↑' : '↓'}
-                  </span>
+                  {txn.type === 'earn' ? (
+                    <ArrowUp size={16} strokeWidth={2} aria-hidden="true" className="text-brand-green flex-shrink-0" />
+                  ) : (
+                    <ArrowDown size={16} strokeWidth={2} aria-hidden="true" className="text-red-500 flex-shrink-0" />
+                  )}
                   <span className="sr-only">
                     {txn.type === 'earn' ? 'Earned points' : 'Redeemed points'}
                   </span>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Home } from 'lucide-react'
 import { Toaster, toast } from 'react-hot-toast'
 import { AuthState, GiftCard, RedeemStatus } from './types/index'
 import { login, setAuthToken, clearAuthToken } from './api/client'
@@ -24,7 +25,14 @@ const LoginScreen = ({ onLogin }: LoginScreenProps) => {
   return (
     <div className="min-h-screen bg-brand-offwhite flex items-center justify-center">
       <div className="bg-white rounded-2xl p-8 shadow-sm max-w-sm w-full mx-4">
-        <p className="text-2xl font-bold text-brand-orange text-center">CasaPerks</p>
+        <div className="flex justify-center mb-4">
+          <div className="w-16 h-16 bg-brand-pink rounded-2xl flex items-center justify-center">
+            <Home size={32} strokeWidth={1.5} aria-hidden="true" className="text-brand-orange flex-shrink-0" />
+          </div>
+        </div>
+        <p className="text-4xl font-bold text-center">
+          <span className="text-brand-orange">Casa</span><span className="text-brand-darkred">Perks</span>
+        </p>
         <p className="text-sm text-gray-400 text-center mt-1 mb-8">Resident Rewards</p>
 
         <div>
