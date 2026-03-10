@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import { PORT } from './config/constants'
+import { PORT, CORS_OPTIONS } from './config/constants'
 import authRoutes from './routes/auth'
 import residentRoutes from './routes/residents'
 import giftCardRoutes from './routes/giftCards'
@@ -11,12 +11,9 @@ dotenv.config()
 
 const app = express()
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true,
-}))
+app.use(cors(CORS_OPTIONS))
 
-app.use(express.json())
+app.use(express.json({ limit: '10kb' }))
 
 app.use('/auth', authRoutes)
 app.use('/residents', residentRoutes)
