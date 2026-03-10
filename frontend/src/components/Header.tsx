@@ -14,7 +14,7 @@ export default function Header({ residentName, unit, pointsBalance, onLogout }: 
         <div>
           <span className="text-2xl font-bold flex items-center gap-2" aria-label="CasaPerks">
             <Home size={20} strokeWidth={1.75} aria-hidden="true" className="text-brand-orange flex-shrink-0" />
-            <span className="text-brand-orange">Casa</span><span className="text-brand-darkred">Perks</span>
+            <span><span className="text-brand-orange">Casa</span><span className="text-brand-darkred">Perks</span></span>
           </span>
           <p className="text-sm text-gray-500">
             {residentName} · {unit}
