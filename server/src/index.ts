@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express'
+import helmet from 'helmet'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { PORT, CORS_OPTIONS } from './config/constants'
@@ -11,6 +12,7 @@ dotenv.config()
 
 const app = express()
 
+app.use(helmet())
 app.use(cors(CORS_OPTIONS))
 
 app.use(express.json({ limit: '10kb' }))

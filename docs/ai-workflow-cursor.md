@@ -40,6 +40,7 @@ Overall structure and implementation matched specifications closely across all p
 - Initial flat route structure (controllers collapsed into route handlers) — rejected, replaced with an explicit MVC prompt separating routes, controllers, and models
 - JWT-last implementation order suggested during planning — overridden, JWT was implemented from the start
 - `express-rate-limit` applied globally across all routes — rejected, scoped only to `POST /residents/:id/redeem`
+- No security headers — rejected, `helmet` was added as the first middleware in the stack to set `X-Frame-Options`, `X-Content-Type-Options`, `Content-Security-Policy`, `Strict-Transport-Security`, and others automatically on every response
 
 ---
 
