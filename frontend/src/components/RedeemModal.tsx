@@ -20,6 +20,10 @@ export default function RedeemModal({
   const [logoError, setLogoError] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    setLogoError(false)
+  }, [card?.id])
+
   // Move focus into modal panel when opened
   useEffect(() => {
     if (card) {
@@ -156,7 +160,7 @@ export default function RedeemModal({
               {card.brand} {card.value} redeemed!
             </p>
             <p className="text-gray-500 text-center text-sm mt-2">
-              Your new balance: {(residentBalance - card.pointsCost).toLocaleString()} pts
+              Your new balance: {residentBalance.toLocaleString()} pts
             </p>
             <button
               onClick={onClose}
