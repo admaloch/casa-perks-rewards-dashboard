@@ -1,14 +1,12 @@
+import 'dotenv/config'
 import express, { Request, Response, NextFunction } from 'express'
 import helmet from 'helmet'
 import cors from 'cors'
-import dotenv from 'dotenv'
 import { PORT, CORS_OPTIONS } from './config/constants'
 import authRoutes from './routes/auth'
 import residentRoutes from './routes/residents'
 import giftCardRoutes from './routes/giftCards'
 import redeemRoutes from './routes/redeem'
-
-dotenv.config()
 
 const app = express()
 
